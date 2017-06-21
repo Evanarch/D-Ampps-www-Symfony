@@ -1,0 +1,79 @@
+# src/OC/PlatformBundle/Resources/config/routing.yml
+
+oc_platform_home:
+    path:      /{page}
+    defaults:
+        _controller: OCPlatformBundle:Advert:index
+        page:        1
+    requirements:
+        page: \d*
+    
+oc_platform_view:
+    path:      /advert/{id}
+    defaults:
+        _controller: OCPlatformBundle:Advert:view
+    requirements:
+        id: \d+
+
+oc_platform_add:
+    path:      /add
+    defaults:
+        _controller: OCPlatformBundle:Advert:add
+
+oc_platform_edit:
+    path:      /edit/{id}
+    defaults:
+        _controller: OCPlatformBundle:Advert:edit
+    requirements:
+        id: \d+
+
+oc_platform_delete:
+    path:      /delete/{id}
+    defaults:
+        _controller: OCPlatformBundle:Advert:delete
+    requirements:
+        id: \d+
+
+oc_platform_purge:
+    path:     /purge/{days}
+    defaults:
+        _controller: OCPlatformBundle:Advert:purge
+    requirements:
+        days: \d+
+        
+oc_platform_tuto:
+    path:      /tuto
+    defaults:
+        _controller: OCPlatformBundle:Advert:tuto
+
+oc_platform_form:
+    path:      /form/{id}
+    defaults:
+        _controller: OCPlatformBundle:Advert:form
+    requirements:
+        id: \d+
+        
+oc_platform_maj:
+    path:      /maj
+    defaults:
+        _controller: OCPlatformBundle:Advert:maj
+        
+oc_platform_pucette:
+    path:      /pucette
+    defaults:
+        _controller: OCPlatformBundle:Advert:pucette
+
+oc_platform_liste:
+    path:      /liste
+    defaults:
+        _controller: OCPlatformBundle:Advert:liste
+        
+oc_platform_call:
+    path:      /call
+    defaults:
+        _controller: OCPlatformBundle:Advert:call
+
+oc_platform_show:
+    path:      /show
+    defaults:
+        _controller: OCPlatformBundle:Advert:show

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pucette</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    </head>
+    <body>
+        <button id="majPremier">Affichage du formulaire</button>
+        <!--<input type="number" id="identificator" />-->
+        <select id="identificator" >
+            {{ include("OCPlatformBundle:Advert:listederoulante.html.twig") }}
+        </select>
+        <div id="dForm"></div>
+
+
+    </body>
+    <script src="{{asset('jquery.js')}}"></script>
+    <script>
+        //$('#identificator').change(function () {
+        $('#majPremier').click(function () {
+            //var id = $('#identificator').children('option:selected').attr('value');
+            var id = $('#identificator').val();
+            var url = '/Symfony/web/app_dev.php/platform/form/' + id;
+            $('#dForm').load(url, function () {
+            });
+        });
+    </script>
+
+</html>
